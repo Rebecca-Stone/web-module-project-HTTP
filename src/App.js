@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch, Redirect, useParams } from "react-router-dom";
+import { Route, Switch, Redirect, useParams, useHistory } from "react-router-dom";
 import MovieList from "./components/MovieList";
 import Movie from "./components/Movie";
 import EditMovieForm from "./components/EditMovieForm";
@@ -10,22 +10,35 @@ import axios from "axios";
 const App = (props) => {
   const [movies, setMovies] = useState([]);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const { push } = useHistory();
   // const [movieId, setMovieId] = useState(null);
+
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:9000/api/movies").then((res) => {
-      // setMovieId(id)
-      setMovies(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    axios
+      .get("http://localhost:9000/api/movies")
+      .then((res) => {
+        setMovies(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
-  
-
-  const deleteMovie = (id) => {};
+  const deleteMovie = (id) => {
+    axios
+      .delete(`http://localhost:9000/api/movies/${id}`)
+      .then((res) => {
+        setMovies(movies.filter(movie => movie.id !== id));
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        push('/api/movies')
+      })
+  };
 
   const addToFavorites = (movie) => {};
 
@@ -42,15 +55,11 @@ const App = (props) => {
 
           <Switch>
             <Route path="/movies/edit/:id">
-              <EditMovieForm
-                setMovies={setMovies}
-                movies={movies}
-                // movieId={movieId}
-              />
+              <EditMovieForm setMovies={setMovies} movies={movies} />
             </Route>
 
             <Route path="/movies/:id">
-              <Movie movies={movies}/>
+              <Movie movies={movies} deleteMovie={deleteMovie} />
             </Route>
 
             <Route path="/movies">

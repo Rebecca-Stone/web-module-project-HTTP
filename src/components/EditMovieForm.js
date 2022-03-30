@@ -13,10 +13,10 @@ const initialFormValue = {
 
 const EditMovieForm = (props) => {
   const { push } = useHistory();
-  const { setMovies, movies } = props;
+  const { setMovies } = props;
   const { id } = useParams()
   const [movie, setMovie] = useState(initialFormValue);
-  const [movieId, setMovieId] = useState(null)
+  // const [movieId, setMovieId] = useState(null)
 
   useEffect(() => {
     setMovies(movie);
@@ -28,7 +28,7 @@ const EditMovieForm = (props) => {
       ...movie,
       [name]: value,
     });
-	setMovieId(id)
+	// setMovieId(id)
   };
 
   const handleSubmit = (e) => {
@@ -37,7 +37,7 @@ const EditMovieForm = (props) => {
       .put(`http://localhost:9000/api/movies/${id}`, movie)
       .then((res) => {
         setMovies(res.data);
-        push(`/movies/${movieId}`);
+        push(`/movies/${id}`);
       })
       .catch((err) => {
         console.log(err);

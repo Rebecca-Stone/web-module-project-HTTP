@@ -8,7 +8,7 @@ This module explored HTTP methods, REST interfaces, CRUD apps and using put and 
 - Understand how to pass values into a Route component to allow for the updating of state.
 
 ## Introduction
-CRUD applications are the foundation of most web applications. Being able to manage creating, edit and deleting data from an external source is as key a skill as it gets. In this project, you will complete the code nessisary to allow all of these fundmental actions.
+CRUD applications are the foundation of most web applications. Being able to manage creating, edit and deleting data from an external source is as key a skill as it gets. In this project, you will complete the code necessary to allow all of these fundamental actions.
 
 ![Movie DB Example](project-goals.gif)
 
@@ -46,10 +46,10 @@ CRUD applications are the foundation of most web applications. Being able to man
 
 ## Instructions
 ### Task 1: Project Set Up
-* [ ] Create a forked copy of this project.
-* [ ] Clone your OWN version of the repository in your terminal
-* [ ] cd into the project base directory `cd web-module-project-HTTP`
-* [ ] Download server dependencies by running `npm install`
+* [X] Create a forked copy of this project.
+* [X] Clone your OWN version of the repository in your terminal
+* [X] cd into the project base directory `cd web-module-project-HTTP`
+* [X] Download server dependencies by running `npm install`
 * [ ] Run the local web server by running `node server.js`
 * [ ] Open a new terminal window and cd into the client code `cd client`
 * [ ] Download project dependencies by running `npm install`
@@ -59,19 +59,19 @@ CRUD applications are the foundation of most web applications. Being able to man
 #### Editing a Movie
 > *Let's start by walking through the process of adding the routing, component and service calls need for resource updating*
 
-* [ ] First, we need to be able to navigate to the edit movie component. In App.js, add in the `<EditMovieForm> `component to the supplied edit route.
+* [X] First, we need to be able to navigate to the edit movie component. In App.js, add in the `<EditMovieForm> `component to the supplied edit route.
 
-* [ ] Next, we need to grab the id being passed into the component through the url. Use the `useParams` hook to get the id value.
+* [X] Next, we need to grab the id being passed into the component through the url. Use the `useParams` hook to get the id value.
 
-* [ ] We need to be able to load in the current movie's attributes into our local form state. When `EditMovieForm` mounts, retrieve our current id's movie from the api and save the data returned to local state.
+* [X] We need to be able to load in the current movie's attributes into our local form state. When `EditMovieForm` mounts, retrieve our current id's movie from the api and save the data returned to local state.
 
-* [ ] At this point, nothing happens when the edit form is submitted. Add in the api call needed to update the server with our updated movie data.
+* [X] At this point, nothing happens when the edit form is submitted. Add in the api call needed to update the server with our updated movie data.
 
-* [ ] Don't forget to make sure that your server data and your local state are in sync! Make any changes the edit route needed to give the edit form access to App's `setMovies` method.
+* [X] Don't forget to make sure that your server data and your local state are in sync! Make any changes the edit route needed to give the edit form access to App's `setMovies` method.
 
-* [ ] Now that we have access to `setMovies`, made sure the updated list of movies is saved to our global state.
+* [X] Now that we have access to `setMovies`, made sure the updated list of movies is saved to our global state.
 
-* [ ] Redirect the user to the currently edited movie's individual info page.
+* [X] Redirect the user to the currently edited movie's individual info page.
 
 #### Deleting a Movie
 > *You added in a CRUD feature! Good job! Now let's get deleted squared away...*
@@ -106,7 +106,7 @@ CRUD applications are the foundation of most web applications. Being able to man
 - Add in some Style!
 
 ### Submission Format
-- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
-- [ ] Connect your fork to Codegrade using the "Connect Git" button.
-- [ ] Find your newly created fork from the list and push your work to main.
-- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
+- [X] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
+- [X] Connect your fork to Codegrade using the "Connect Git" button.
+- [X] Find your newly created fork from the list and push your work to main.
+- [X] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ

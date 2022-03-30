@@ -72,7 +72,7 @@ const Movie = (props) => {
                     type="button"
                     className="m-2 btn 
                     btn-danger"
-                    onClick={evt => deleteMovie(movie.id)}
+                    onClick={(evt) => deleteMovie(movie.id)}
                     value="Delete"
                   />
                 </span>
